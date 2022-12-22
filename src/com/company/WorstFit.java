@@ -11,10 +11,7 @@ public class WorstFit {
         int numOfProcesses=processes.size();
         int numOfPartitions=partitions.size();
         for (int i = 0; i < numOfProcesses; i++) {
-//            System.out.println(i);
-//            showPartitions(partitions);
-//            showProcesses(processes);
-//            System.out.println();
+
             double maxDiff = -1;
             int worstIdx = -1;
             for (int j = 0; j < numOfPartitions; j++) {
@@ -44,18 +41,11 @@ public class WorstFit {
             }
 
         }
-//        System.out.println("*");
-//        showPartitions(partitions);
-//        showProcesses(processes);
-//        System.out.println();
-
-
         Main.partitions = partitions;
         Main.processes = processes;
     }
     public void addPartition(int idx,Partition partition){
         ArrayList<Partition> partitions=Main.partitions;
-        ArrayList<Process>processes=Main.processes;
         Partition temp =new Partition("",0.0,false);
         partitions.add(temp);
 
@@ -66,17 +56,4 @@ public class WorstFit {
 
     }
 
-    public static void showProcesses(ArrayList<Process>processes){
-        int n=processes.size();
-        for (int i = 0; i < n; i++) {
-            if(processes.get(i).getPartitionName().equals(processes.get(i).getName()+" can not be allocated"))
-                processes.get(i).show();
-        }
-    }
-    public static void showPartitions(ArrayList<Partition>partitions){
-        int n=partitions.size();
-        for (int i = 0; i < n; i++) {
-            partitions.get(i).show();
-        }
-    }
 }
