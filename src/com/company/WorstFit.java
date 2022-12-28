@@ -50,9 +50,9 @@ public class WorstFit {
         partitions.add(temp);
 
         for (int i = partitions.size()-1; i >=idx&&!partitions.get(i).getFrom().equals( partitions.get(idx).getName()) ; i--) {
-            partitions.get(i).equal(partitions.get(i-1));
+            partitions.get(i).deepCopy(partitions.get(i-1));
         }
-        partitions.get(idx+1).equal(partition);
+        partitions.get(idx+1).deepCopy(partition);
 
     }
 

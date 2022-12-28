@@ -45,11 +45,11 @@ public class FirstFit {
 
         for (int i = partitions.size() - 1; i > idx; i--) {
 
-            partitions.get(i).equal(partitions.get(i - 1));
+            partitions.get(i).deepCopy(partitions.get(i - 1));
             if (partitions.get(i).getFrom().equals(partitions.get(idx).getName()))
                 break;
         }
-        partitions.get(idx + 1).equal(partition);
+        partitions.get(idx + 1).deepCopy(partition);
 
     }
 

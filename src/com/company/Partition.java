@@ -69,7 +69,7 @@ public class Partition {
     public void setFrom(String from) {
         this.from = from;
     }
-    public void equal(Partition temp){
+    public void deepCopy(Partition temp){
         this.from=temp.getFrom();
         this.processName=temp.getProcessName();
         this.external=temp.getExternal();
